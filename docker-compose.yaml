@@ -11,7 +11,9 @@ services:
     command: -config.file=/etc/loki/local-config.yaml
     networks:
       - loki
-
+    environment:
+      - BASIC_AUTH_USERNAME=myuser
+      - BASIC_AUTH_PASSWORD=mypassword
   promtail:
     image: grafana/promtail:latest
     volumes:
